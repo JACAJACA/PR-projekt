@@ -7,30 +7,10 @@ import SearchBar from './components/SearchBar.js';
 import MovieComponent from './components/MovieComponent.js';
 
 function App() {
-  const trendingMovies = [
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-  ]
-
-  const latestMovies = [
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-    { image: './placeholder.png', title: 'title', rating: 10 },
-  ]
-
   return (
     <div id='body'>
       <Header></Header>
-      
+
       <main>
         <SearchBar></SearchBar>
         <h5>Trending</h5>
