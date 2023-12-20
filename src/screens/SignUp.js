@@ -1,10 +1,9 @@
 import React from 'react';
-import '../styles/Home.css';
+import '../styles/SignIn.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom';
 import Header from '../components/HeaderComponent.js';
 import Footer from '../components/FooterComponent.js';
-import SearchBar from '../components/SearchBar.js';
-import MovieComponent from '../components/MovieComponent.js';
 
 function Home() {
   return (
@@ -12,12 +11,15 @@ function Home() {
       <Header></Header>
 
       <main>
-        <SearchBar></SearchBar>
-        <h5>Trending</h5>
-        <MovieComponent></MovieComponent>
-
-        <h5>Latest</h5>
-        <MovieComponent></MovieComponent>
+        <div className='container'>
+            <h2>Sign up</h2>
+            <input type='text' placeholder='name'></input><br></br>
+            <input type='text' placeholder='login'></input><br></br>
+            <input type='text' placeholder='email'></input><br></br>
+            <input type='password' placeholder='password'></input><br></br>
+            <input type='password' placeholder='re-enter password'></input>
+            <Link to="/signup"><h5><button>sign up</button></h5></Link>
+        </div>
       </main>
 
       <Footer></Footer>

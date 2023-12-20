@@ -3,8 +3,6 @@ import '../styles/Details.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/HeaderComponent.js';
 import Footer from '../components/FooterComponent.js';
-import SearchBar from '../components/SearchBar.js';
-import MovieComponent from '../components/MovieComponent.js';
 
 function Home() {
   return (
@@ -16,7 +14,7 @@ function Home() {
             <div className='poster'><img src='./placeholder.png' alt='title' /></div>
             <div className='introduction'>
                 <h1>Title</h1>
-                <div className='rating'>  
+                <div className='rating2'>  
                         <img src='star.png' alt='Ocena' />
                         <h3>10.0</h3>
                 </div>

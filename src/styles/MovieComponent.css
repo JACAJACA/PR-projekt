@@ -1,4 +1,4 @@
-#trending {
+  #trending {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -23,6 +23,8 @@
   }
   
   .rating {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: baseline;
