@@ -1,0 +1,47 @@
+.top {
+    margin-top: 5%;
+    margin-inline: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.poster {
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+h1 {
+    margin-left: 3%;
+}
+
+.rating {
+    margin-left: 3%;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.rating img {
+    width: 30px;
+    height: auto;
+    margin-right: 15px;
+}
+
+h5 {
+    margin-left: 3%;
+}
+
+h6 {
+    margin-left: 3%;
+}
+
+.bottom {
+    margin-inline: 7%;
+    margin-bottom: 5%;
+}
