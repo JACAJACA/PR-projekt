@@ -1,28 +1,23 @@
 import React from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Header from './components/HeaderComponent.js';
-import Footer from './components/FooterComponent.js';
-import SearchBar from './components/SearchBar.js';
-import MovieComponent from './components/MovieComponent.js';
+import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
+import Home from './screens/Home.js';
+import Details from './screens/Details';
+import AddMovie from './screens/AddMovie';
+import SignIn from './screens/SignIn';
+import SignUp from './screens/SignUp';
 
-function App() {
+const App = () => {
   return (
-    <div id='body'>
-      <Header></Header>
-
-      <main>
-        <SearchBar></SearchBar>
-        <h5>Trending</h5>
-        <MovieComponent></MovieComponent>
-
-        <h5>Latest</h5>
-        <MovieComponent></MovieComponent>
-      </main>
-
-      <Footer></Footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/add" element={<AddMovie />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

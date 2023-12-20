@@ -1,0 +1,40 @@
+#trending {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+  
+  #trending img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .movie {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+  }
+  
+  .movie h6 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  
+  .rating h6 {
+    margin-left: 10px;
+  }
+  
+  #trending .movie .rating img {
+    width: auto;
+    height: 20px;
+  }
+  
+  

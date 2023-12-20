@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App';
-import '../App.css';
+import { Link } from 'react-router-dom';
+import '../styles/MovieComponent.css';
 
 function MovieComponent() {
     const trendingMovies = [
@@ -17,14 +17,14 @@ function MovieComponent() {
     return (
         <div id='trending'>
             {trendingMovies.map((movie, index) => (
-                <div key={index} className='movie'>
+                <Link key={index} to="/details" className='movie'>
                     <img src={movie.image} alt={movie.title} />
                     <h6>{movie.title}</h6>
                     <div className='rating'>  
                         <img src='star.png' alt='Ocena' />
                         <h6>{movie.rating.toFixed(1)}</h6>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
