@@ -35,13 +35,16 @@ const AddMovie = () => {
   const handleAdd = async (event) => {
     event.preventDefault();
 
-    if (!formData.title || !formData.image || !formData.content) {
+    if (!formData.title || !formData.publicationYear || !formData.rate || !formData.genre || !formData.image || !formData.content) {
       return;
     }
 
     axios
       .post('https://at.usermd.net/api/movies', {
         title: formData.title,
+        publicationYear: formData.publicationYear,
+        rate: formData.rate,
+        genre: formData.genre,
         image: formData.image,
         content: formData.content,
       })
