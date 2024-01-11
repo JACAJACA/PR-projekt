@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Navigate, Switch, Routes } from 'react-router-dom';
 import Home from './screens/Home.js';
 import Details from './screens/Details';
 import AddMovie from './screens/AddMovie';
