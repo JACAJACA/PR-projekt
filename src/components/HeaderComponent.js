@@ -30,16 +30,16 @@ const HeaderComponent = () => {
     };
 
     const handleLogout = () => {
-        // Logika do wylogowania użytkownika (np. usuwanie tokena)
         localStorage.removeItem('token');
         setIsLoggedIn(false);
+        navigate('/');
         window.location.reload();
     };
 
     return (
         <div className='header'>
             <header>
-                <Link to="/"><img src={'./ovie.png'} alt='logo' /></Link>
+                <Link to="/"><img src={process.env.PUBLIC_URL + '/ovie.png'} alt='logo' /></Link>
                 <div className='spacer'></div>
                 {isLoggedIn && (
                     <h5><button onClick={handleChangeRoute}>add movie</button></h5>

@@ -64,11 +64,13 @@ const SignUp = () => {
             <input type='text' name="name" placeholder='name' value={formData.name} onChange={handleInputChange}></input><br></br>
             <input type='text' name="email" placeholder='email' value={formData.email} onChange={handleInputChange}></input><br></br>
             <input type='password' name="password" placeholder='password' value={formData.password} onChange={handleInputChange}></input><br></br>
-            <Link to="/signup"><h5><button>sign up</button></h5></Link>
+            <h5><button onClick={handleRegistration}>sign up</button></h5>
         </div>
       </main>
 
-      <Footer></Footer>
+      <div className='bottom'>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

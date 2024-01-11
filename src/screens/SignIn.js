@@ -74,7 +74,9 @@ const SignIn = () => {
         </div>
       </main>
 
-      <Footer></Footer>
+      <div className='bottom'>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

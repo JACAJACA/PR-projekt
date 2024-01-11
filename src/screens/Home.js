@@ -27,16 +27,18 @@ const Home = () => {
 
       <main>
         <SearchBar></SearchBar>
-        <div id='allMoviesContainer'>
-          <div id='allMovies'>
-            {movies.map((movie, index) => (
-              <MovieComponent key={index} {...movie} />
-            ))}
-          </div>
+
+        <div id='allMovies'>
+          {movies.map((movie, index) => (
+            <MovieComponent key={index} {...movie} />
+          ))}
         </div>
+
       </main>
 
-      <Footer></Footer>
+      <div className='bottom'>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

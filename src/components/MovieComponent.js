@@ -12,7 +12,7 @@ const MovieComponent = (props) => {
                 <h6>{title}</h6>
                 <div className='rating'>  
                     <img src='star.png' alt='Ocena' />
-                    <h6>{rate.toFixed(1)}</h6>
+                    <h6>{rate}</h6>
                 </div>
             </div>
         </Link>

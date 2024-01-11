@@ -1,3 +1,9 @@
+body > #root > div {
+    height: 100vh;
+    display: flex;
+  flex-direction: column;
+  }
+
 .top {
     margin-top: 5%;
     margin-inline: 10%;
@@ -14,8 +20,8 @@
 }
 
 img {
-    width: 300px;
-    height: auto;
+    width: 250px;
+    height: 360px;
 }
 
 h1 {
@@ -46,6 +52,6 @@ h6 {
 }
 
 .bottom {
-    margin-inline: 7%;
-    margin-bottom: 5%;
+    margin-top: auto;
+    align-items: baseline;
 }
