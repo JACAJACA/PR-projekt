@@ -6,8 +6,7 @@ header {
     padding-right: 3%;
   }
   
-  header img {
-    flex: 1;
+  .header img {
     justify-content: flex-start;
 
     width: 60px;

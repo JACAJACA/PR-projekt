@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/HeaderComponent.js';
@@ -6,18 +6,34 @@ import Footer from '../components/FooterComponent.js';
 import SearchBar from '../components/SearchBar.js';
 import MovieComponent from '../components/MovieComponent.js';
 
-function Home() {
+import axios from 'axios';
+
+const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://at.usermd.net/api/movies')
+      .then(response => {
+        setMovies(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching movies:', error);
+      });
+  }, []);
+
   return (
     <div id='body'>
       <Header></Header>
 
       <main>
         <SearchBar></SearchBar>
-        <h5>Trending</h5>
-        <MovieComponent></MovieComponent>
-
-        <h5>Latest</h5>
-        <MovieComponent></MovieComponent>
+        <div id='allMoviesContainer'>
+          <div id='allMovies'>
+            {movies.map((movie, index) => (
+              <MovieComponent key={index} {...movie} />
+            ))}
+          </div>
+        </div>
       </main>
 
       <Footer></Footer>

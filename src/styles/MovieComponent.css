@@ -1,20 +1,13 @@
-  #trending {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 70px;
-  }
-  
-  #trending img {
-    width: 150px;
-    height: auto;
+  .movie img {
+    width: 250px;
+    height: 360px;
   }
   
   .movie {
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
+    padding-left: 40px;
+    margin-bottom: 20px;
   }
   
   .movie h6 {
@@ -34,7 +27,7 @@
     margin-left: 10px;
   }
   
-  #trending .movie .rating img {
+  .movie .rating img {
     width: auto;
     height: 20px;
   }

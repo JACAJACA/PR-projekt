@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 2%;
+    padding-top: 2%;
   }
   
   #searchbar input {

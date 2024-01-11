@@ -8,6 +8,19 @@
     padding-left: 3%;
     padding-right: 3%;
   }
+
+  #allMoviesContainer {
+    display: flex;
+  }
+
+  #allMovies {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: 70px;
+  }
   
 
   
