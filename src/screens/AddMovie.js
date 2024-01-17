@@ -12,7 +12,7 @@ const AddMovie = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
-    publicationYear: '',
+    productionYear: '',
     rate: '',
     genre: '',
     image: '',
@@ -35,14 +35,14 @@ const AddMovie = () => {
   const handleAdd = async (event) => {
     event.preventDefault();
 
-    if (!formData.title || !formData.publicationYear || !formData.rate || !formData.genre || !formData.image || !formData.content) {
+    if (!formData.title || !formData.productionYear || !formData.rate || !formData.genre || !formData.image || !formData.content) {
       return;
     }
 
     axios
       .post('https://at.usermd.net/api/movies', {
         title: formData.title,
-        publicationYear: formData.publicationYear,
+        productionYear: formData.productionYear,
         rate: formData.rate,
         genre: formData.genre,
         image: formData.image,
@@ -56,7 +56,7 @@ const AddMovie = () => {
 
         setFormData({
           title: '',
-          publicationYear: '',
+          productionYear: '',
           rate: '',
           genre: '',
           image: '',
@@ -72,13 +72,15 @@ const AddMovie = () => {
       <main>
         <div className='container'>
             <h2>Add movie</h2>
-            <input type='text' name="title" placeholder='title' value={formData.title} onChange={handleInputChange}></input><br></br>
-            <input type='text' name="pulicationYear" placeholder='publication year' value={formData.publicationYear} onChange={handleInputChange}></input><br></br>
-            <input type='text' name="rate" placeholder='rate' value={formData.rate} onChange={handleInputChange}></input><br></br>
-            <input type='text' name="genre" placeholder='genre' value={formData.genre} onChange={handleInputChange}></input><br></br>
-            <input type='text' name="image" placeholder='image' value={formData.image} onChange={handleInputChange}></input><br></br>
-            <textarea name="content" rows="5" placeholder='description' value={formData.content} onChange={handleInputChange} />
-            <h5><button type="submit" onClick={handleAdd}>Submit</button></h5>
+            <form>
+              <input type='text' name="title" placeholder='title' value={formData.title} onChange={handleInputChange}></input><br></br>
+              <input type='number' name="productionYear" placeholder='production year' value={formData.productionYear} onChange={handleInputChange}></input><br></br>
+              <input type='number' name="rate" placeholder='rate' value={formData.rate} onChange={handleInputChange}></input><br></br>
+              <input type='text' name="genre" placeholder='genre' value={formData.genre} onChange={handleInputChange}></input><br></br>
+              <input type='text' name="image" placeholder='image' value={formData.image} onChange={handleInputChange}></input><br></br>
+              <textarea name="content" rows="5" placeholder='description' value={formData.content} onChange={handleInputChange} />
+              <h5><button type="submit" onClick={handleAdd}>Submit</button></h5>
+            </form>
         </div>
       </main>
 

@@ -57,13 +57,13 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className='input-wrapper'>
-      <input
-        placeholder='Search movies...'
-        value={searchTerm}
-        onChange={handleSearchChange}
-      />
-      {isSearching}
+    <div className='searchbar'>
+        <input
+            placeholder='Search...'
+            value={searchTerm}
+            onChange={handleSearchChange}
+        />
+        {isSearching}
     </div>
   );
 };

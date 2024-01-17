@@ -11,9 +11,13 @@
   }
   
   .movie h6 {
+    max-width: 250px;
     margin-top: 10px;
     text-align: center;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .rating {

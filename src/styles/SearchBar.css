@@ -1,11 +1,11 @@
-#searchbar {
+.searchbar {
     display: flex;
     width: 100%;
     justify-content: center;
     padding-top: 2%;
   }
   
-  #searchbar input {
+  .searchbar input {
     color:#dfdfdf;
     width: 40%;
     height: 50px;

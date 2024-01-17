@@ -10,30 +10,49 @@ import axios from 'axios';
 
 const Details = () => {
   const { id } = useParams();
-  const { setMovies } = useMovies();
   const [movieDetails, setMovieDetails] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-      const fetchMovieDetails = async () => {
-          try {
-              const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
-              if (!response.data) {
-                  throw new Error('Network response was not ok');
-              }
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await axios.get(`https://at.usermd.net/api/movies/${id}`);
+        if (!response.data) {
+          throw new Error('Network response was not ok');
+        }
 
-              const movieDetailsData = response.data;
-              setMovieDetails(movieDetailsData);
-          } catch (error) {
-              console.error('Error fetching movie details:', error);
-          }
-      };
+        const movieDetailsData = response.data;
+        setMovieDetails(movieDetailsData);
+      } catch (error) {
+        console.error('Error fetching movie details:', error);
+      }
+    };
 
-      fetchMovieDetails();
+    fetchMovieDetails();
+
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
   }, [id]);
 
+  const handleDelete = () => {
+    const token = localStorage.getItem('token');
+
+    axios.delete(`https://at.usermd.net/api/movie/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      console.log('Movie deleted successfully:', response);
+      window.location.href = '/';
+    })
+    .catch(error => {
+      console.error('Error deleting movie:', error);
+    });
+  };
+
   if (!movieDetails) {
-      // Render loading state or handle the absence of data
-      return <p>Loading...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
@@ -49,9 +68,14 @@ const Details = () => {
                         <img src={process.env.PUBLIC_URL + '/star.png'} alt='Ocena' />
                         <h3>{movieDetails.rate}</h3>
                 </div>
-                <h6>Year: {movieDetails.publicationYear}</h6>
+                <h6>Year: {movieDetails.productionYear}</h6>
                 <h6>Genre: {movieDetails.genre}</h6>
                 <h5>{movieDetails.content} </h5>
+                {isLoggedIn && (
+                  <button className='delete-button' onClick={handleDelete}>
+                    Delete
+                  </button>
+                )}
             </div>
         </div>
       </main>
