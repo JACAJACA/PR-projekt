@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useMovies } from "../components/MoviesContext";
+
 import '../styles/Details.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/HeaderComponent.js';

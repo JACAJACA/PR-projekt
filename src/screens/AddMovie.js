@@ -4,8 +4,6 @@ import '../styles/AddMovie.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../components/HeaderComponent.js';
 import Footer from '../components/FooterComponent.js';
-import SearchBar from '../components/SearchBar.js';
-import MovieComponent from '../components/MovieComponent.js';
 import axios from 'axios';
 
 const AddMovie = () => {
